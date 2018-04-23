@@ -68,14 +68,24 @@ textarea {
   .instructions {
     margin: 15px 0;
   }
-  .animate {
-    animation-name: animateEditor;
-    animation-duration: 0.5s;
+  .animate-code {
+    animation: animateEditor 0.5s;
   }
+  .animate-frog {
+    animation: animateFrog 1s infinite;
+  }
+  @keyframes animateFrog {
+    0% {
+      transform: scale3d(1,1,1);
+    }
+    50% {
+      transform: scale3d(1.05,1.05,1.05);
+    }
+    100% {
+      transform: scale3d(1,1,1);
+    }
 
-  /* Safari 4.0 - 8.0 */
-
-  /* Standard syntax */
+  }
   @keyframes animateEditor {
     0%   {transform: rotate(0);}
     25%  { transform: rotate(5deg);}
@@ -144,7 +154,34 @@ textarea {
       overflow: hidden;
       .bg-frog {
         background: url("../images/frog-green.svg") no-repeat;
-        width: 90%;
+        margin-left: 15%;
+        width: 60%;
+        height: 90%;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    .frog-yellow {
+      width: 15%;
+      height: 15%;
+      overflow: hidden;
+      .bg-frog {
+        background: url("../images/frog-yellow.svg") no-repeat;
+        margin-left: 15%;
+        width: 60%;
+        height: 90%;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    .frog-red {
+      width: 15%;
+      height: 15%;
+      overflow: hidden;
+      .bg-frog {
+        background: url("../images/frog-red.svg") no-repeat;
+        margin-left: 15%;
+        width: 60%;
         height: 90%;
         background-position: center;
         background-size: contain;
@@ -166,6 +203,32 @@ textarea {
       overflow: hidden;
       .bg {
         background: url("../images/lilypad-green.svg") no-repeat;
+        padding: 20px;
+        width: 90%;
+        height: 90%;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    .lilipad-yellow {
+      width: 15%;
+      height: 15%;
+      overflow: hidden;
+      .bg {
+        background: url("../images/lilypad-yellow.svg") no-repeat;
+        padding: 20px;
+        width: 90%;
+        height: 90%;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    .lilipad-red {
+      width: 15%;
+      height: 15%;
+      overflow: hidden;
+      .bg {
+        background: url("../images/lilypad-red.svg") no-repeat;
         padding: 20px;
         width: 90%;
         height: 90%;
