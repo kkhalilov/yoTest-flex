@@ -4,6 +4,7 @@ function game() {
     $("#code").on("keyup", function (e) {
         var code = $("#code").val().replace(/\s/g, '');
         $("#pond").attr("style", code);
+        $("#editor").removeClass("animate");
         if(code === bgStyle) {
             $('#next').removeClass('disabled');
         } else {
@@ -11,10 +12,12 @@ function game() {
         }
         var k = e.keyCode || e.which;
         if(k === 13 && code === bgStyle) {
-            $("#lvl_1").css("display", "none");
-        } else {
-            $("#lvl_1").css("display", "block");
+            $('#next').trigger('click');
+
+        } else if(k === 13 && code !== bgStyle)  {
+            $("#editor").addClass('animate');
         }
+
     });
 }
 $(document).ready(function () {
