@@ -2,6 +2,11 @@
 * {
   box-sizing: border-box;
 }
+.tet {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255,0,0,0.64);
+}
 html, body {
   height: 100%;
   padding: 0;
@@ -35,6 +40,9 @@ code {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.8);
   white-space: nowrap;
+}
+code:hover {
+  cursor: pointer;
 }
 textarea {
   padding: 0;
@@ -188,13 +196,13 @@ textarea {
     .bg {
       width: 100%;
       height: 100%;
+      transform: scale(0.939753);
       background-size: contain !important;
       background-position: center !important;
     }
-    .lilipad {
+    .lilypad {
       width: 15%;
       height: 15%;
-      transform: scale(0.939753) rotate(135.964deg);
       overflow: hidden;
       .green {
         background: url("../images/lilypad-green.svg") no-repeat;
