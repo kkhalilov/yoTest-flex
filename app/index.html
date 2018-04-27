@@ -19,39 +19,39 @@
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
-
 </head>
 <body>
 <div class="container-fluid">
-  <div class="row">
+  <div class="row" style="height: 100%">
     <div class="col-md-6" style="padding: 0">
       <div class="lesson">
-        <div class="header-lesson-title">
-          <div class="title animated wobble">
-            Flex code game
-          </div>
-          <div id="level-counter">
-            <a href="№" aria-disabled="true" class="arrow left">◀</a>
-            <a href="lvl_2.html" class="arrow right">▶</a>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="header-lesson-title">
+              <div class="title">
+                Flex code game
+              </div>
+              <div class="level"></div>
+            </div>
           </div>
         </div>
-        <div class="instructions">
-          <p>Допро пожаловать в игру, где мы научим тебя flex.Направь этого лягушонка на лилию справа используя свойство <code class="help" data-toggle="tooltip" data-placement="right" title="Пояснения....">justify-content</code> которое выравнивает элементы горизонтально и принимает следующие значения:</p>
-          <ul>
-            <li><code>flex-start</code>: Элементы выравниваются по левой стороне контейнера.</li>
-            <li><code>flex-end</code>: Элементы выравниваются по правой стороне контейнера.</li>
-            <li><code>center</code>: Элементы выравниваются по центру контейнера.</li>
-            <li><code>space-around</code>: Элементы отображаются с одинаковыми отступами вокруг них</li>
-            <li><code>space-between</code>: Элементы отображаются с одинаковыми отступами между ними.</li>
-          </ul>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="instructions">
+            </div>
+          </div>
         </div>
-        <div id="editor">
-          <div id="css">
-            <div class="line-numbers" style="display: inline-block">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</div>
-            <pre id="before">#pond { <br> display: flex</pre>
-            <textarea id="code" style="height: 24px" autofocus></textarea>
-            <pre id="after">}</pre>
-            <a href="lvl_2.html" id="next" class="btn btn-danger">Следующий</a>
+        <div class="row">
+          <div class="col-md-12">
+            <div id="editor">
+              <div id="css">
+                <div class="line-numbers" style="display: inline-block">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</div>
+                <pre id="before">#pond { <br> display: flex</pre>
+                <textarea id="code" style="height: 24px" autofocus></textarea>
+                <pre id="after">}</pre>
+                <a href="lvl_8.html" id="next" class="btn btn-danger">Следующий</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -59,19 +59,16 @@
     <div class="col-md-6" style="padding: 0">
       <div id="board">
         <div id="pond">
-          <div class="frog">
-            <div class="green bg pulse infinite animated"></div>
-          </div>
         </div>
-        <div id="background" style="justify-content: flex-end;">
-          <div class="lilypad">
-            <div class="green bg"></div>
-          </div>
+        <div id="background">
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -104,7 +101,7 @@
 <script src="/bower_components/bootstrap/js/dist/tooltip.js"></script>
 <script src="/bower_components/bootstrap/js/dist/popover.js"></script>
 <!-- endbuild -->
-
+<script src="scripts/levels.js"></script>
 <!-- build:js scripts/main.js -->
 <script src="scripts/main.js"></script>
 <!-- endbuild -->

@@ -1,6 +1,14 @@
 function game() {
     var correct = false;
+    var lvl = 0;
+    addText();
+    addElements();
+    addStyle();
+    var currentLevel =  1;
+    $(".level").text("Уровень "+ currentLevel + " из 24");
 
+
+    $('#next').addClass('disabled');
     $("#code").on("keyup", function (e) {
         var k = e.keyCode || e.which;
         var code = $("#code").val();
@@ -8,7 +16,12 @@ function game() {
         $("#pond").attr("style", code);
         check();
         if(correct && k ===13) {
-            document.location = $("#next").attr('href');
+            nextLvl();
+            addText();
+            addElements();
+            addStyle();
+            $(".level").text("Уровень "+ currentLevel + " из 24");
+            /*document.location = $("#next").attr('href');*/
         } else if(!correct && k ===13) {
             $("#css").addClass('animate-code');
         }
@@ -55,7 +68,7 @@ function game() {
         console.log(correct);
         return correct;
     }
-    //Функция добавляет лягушек и лилии
+    //Функция добавляет лягушек и лилии с помошью объектов
     /*function addElements() {
         var lilypad = $('<div/>').addClass('lilypad');
         var frog = $('<div/>').addClass('frog');
@@ -65,13 +78,64 @@ function game() {
         $('#background').append(lilypad);
         $('#pond').append(frog);
     }*/
+    function addText() {
+        $(".instructions").append(levels[lvl].instruction);
+    }
+    /*function addFrogs() {
+        $("#pond").append(levels[lvl].frogs);
+    }
+    function addLilypads() {
+        $("#background").append(levels[lvl].lilypads);
+    }*/
+    function addStyle() {
+        $("#background").attr("style", levels[lvl].styles);
+    }
+    function nextLvl() {
+        $(".instructions").text('');
+        $("#code").val('');
+        $("#next").addClass("disabled");
+        $('#background').empty();
+        $('#pond').empty();
+        $("#background").attr("style", "");
+        $("#pond").attr("style", "");
+        $(".level").text("");
+        lvl += 1;
+        currentLevel += 1;
+    }
+    function addElements() {
+        var string = levels[lvl].board;
+        var colors = {
+            'g': 'green',
+            'r': 'red',
+            'y': 'yellow'
+        };
+        for(var i = 0; i < string.length; i++) {
+            var c = string.charAt(i);
+            var color = colors[c];
+
+            var lilypad = $('<div/>').addClass('lilypad');
+            var frog = $('<div/>').addClass('frog');
+            $('<div/>').addClass('bg').addClass(color).appendTo(lilypad);
+            $('<div/>').addClass('bg animated pulse infinite').addClass(color).appendTo(frog);
+            console.log(color);
+
+            $('#background').append(lilypad);
+            $('#pond').append(frog);
+        }
+
+    }
 }
+
+
+
+
+
+
 $(document).ready(function () {
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     });
 
-    $('#next').addClass('disabled');
 
     game();
 });
