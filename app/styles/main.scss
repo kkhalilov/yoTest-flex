@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "animate.css";
 * {
   box-sizing: border-box;
 }
@@ -99,6 +100,11 @@ textarea {
       font-size: 15px;
       margin-bottom: 7px !important;
     }
+  }
+  #restart {
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
   }
 }
 #board {

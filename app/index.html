@@ -1,4 +1,4 @@
-<!doctype html>
+  <!doctype html>
 <html lang="">
 <head>
   <meta charset="utf-8">
@@ -8,11 +8,11 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="styles/animate.css">
   <!-- Place favicon.ico in the root directory -->
 
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -46,14 +46,15 @@
             <div id="editor">
               <div id="css">
                 <div class="line-numbers" style="display: inline-block">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</div>
-                <pre id="before">#pond { <br> display: flex</pre>
+                <pre id="before"></pre>
                 <textarea id="code" style="height: 24px" autofocus></textarea>
-                <pre id="after">}</pre>
-                <a href="lvl_8.html" id="next" class="btn btn-danger">Следующий</a>
+                <pre id="after"></pre>
+                <a href="#" id="next" class="btn btn-danger">Следующий</a>
               </div>
             </div>
           </div>
         </div>
+        <a href="#" id="restart" class="btn btn-info">Restart</a>
       </div>
     </div>
     <div class="col-md-6" style="padding: 0">
@@ -87,7 +88,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-<!-
 <!-- build:js scripts/plugins.js -->
 <script src="/bower_components/bootstrap/js/dist/util.js"></script>
 <script src="/bower_components/bootstrap/js/dist/alert.js"></script>
@@ -101,8 +101,8 @@
 <script src="/bower_components/bootstrap/js/dist/tooltip.js"></script>
 <script src="/bower_components/bootstrap/js/dist/popover.js"></script>
 <!-- endbuild -->
-<script src="scripts/levels.js"></script>
 <!-- build:js scripts/main.js -->
+<script src="scripts/levels.js"></script>
 <script src="scripts/main.js"></script>
 <!-- endbuild -->
 </body>
