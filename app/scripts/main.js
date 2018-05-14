@@ -14,9 +14,9 @@ function game() {
     addStyleToBg();
     addCssText();
     animateFrogs();
-    $("#restart").addClass("disabled");
+    $('#restart').addClass('disabled');
     if(lvl !== 0) {
-        $("#restart").removeClass("disabled");
+        $('#restart').removeClass('disabled');
     }
     var currentLevel =  lvl + 1;
     $('.level').text('Уровень '+ currentLevel + ' из 24');
@@ -105,15 +105,15 @@ function game() {
         $('.level').text('');
         $('#before').text('');
         $('#after').text('');
-        $("#code").focus();
+        $('#code').focus();
         lvl += 1;
         currentLevel += 1;
         isStorage && localStorage.setItem('level', lvl);
         if(lvl !== 0) {
-            $("#restart").removeClass("disabled");
+            $('#restart').removeClass('disabled');
         }
     }
-    $("#next").on('click', function () {
+    $('#next').on('click', function () {
         $('.frog').addClass('animated bounceOutUp');
         setTimeout(function () {
             clearContent();
@@ -165,7 +165,7 @@ function game() {
         }, 900);
     }
     $('#restart').on('click', function () {
-        var isRestart = confirm("Вы вернетесь на первый уровень и начнете все заново." + "\n\n" + "Вы уверены в своем выборе?");
+        var isRestart = confirm('Вы вернетесь на первый уровень и начнете все заново.' + '\n\n' + 'Вы уверены в своем выборе?');
         if(isRestart) {
             localStorage.removeItem('level');
             location.reload();
