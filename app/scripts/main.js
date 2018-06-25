@@ -1,13 +1,12 @@
 function game() {
     const isStorage = 'undefined' !== typeof localStorage;
     var correct = false;
-    var lvl;
-    if(localStorage.getItem('level') === null ) {
-        lvl = 0;
-    } else {
-        lvl = parseInt(localStorage.getItem('level'));
-    }
-
+    var lvl=15;
+       /*if(localStorage.getItem('level') === null ) {
+            lvl = 0;
+        } else {
+            lvl = parseInt(localStorage.getItem('level'));
+        }*/
     console.log(localStorage.getItem('level'));
     addInstructions();
     addFrogsAndLilypads();
@@ -111,6 +110,12 @@ function game() {
         isStorage && localStorage.setItem('level', lvl);
         if(lvl !== 0) {
             $('#restart').removeClass('disabled');
+        }
+        /*добавил 25.06 для того, чтобы был flex-wrap на 17-ом уровне*/
+        if(lvl === 16) {
+            $("#pond").addClass('flex');
+        } else {
+            $("#pond").removeClass('flex');
         }
     }
     $('#next').on('click', function () {

@@ -1,6 +1,6 @@
 var levels = [
     {
-        instruction: '<p>Направь окружность на свой цвет используя свойство <code>justify-content</code>, которое выравнивает элементы горизонтально и принимает следующие значения:</p><ul><li><code>flex-start</code>: Элементы выравниваются по левой стороне контейнера.</li><li><code>flex-end</code>: Элементы выравниваются по правой стороне контейнера.</li><li><code>center</code>: Элементы выравниваются по центру контейнера.</li><li><code>space-between</code>: Элементы отображаются с одинаковыми отступами между ними.</li><li><code>space-around</code>: Элементы отображаются с одинаковыми отступами вокруг них.</li></ul><p>Например, <code>justify-content: flex-end;</code> сдвинет лягушонка вправо.</p>',
+        instruction: '<p>Направь окружность на свой цвет используя свойство <code>justify-content</code>, которое выравнивает элементы горизонтально и принимает следующие значения:</p><ul><li><code>flex-start</code>: Элементы выравниваются по левой стороне контейнера.</li><li><code>flex-end</code>: Элементы выравниваются по правой стороне контейнера.</li><li><code>center</code>: Элементы выравниваются по центру контейнера.</li><li><code>space-between</code>: Элементы отображаются с одинаковыми отступами между ними.</li><li><code>space-around</code>: Элементы отображаются с одинаковыми отступами вокруг них.</li></ul><p>Например, <code>justify-content: flex-end;</code> сдвинет окружность вправо.</p>',
         styles: 'justify-content: flex-end',
         board: 'g',
         before: '#pond { <br> display: flex',
@@ -63,6 +63,13 @@ var levels = [
         after: '}'
     },
     {
+        instruction: '<p>Задействуя свойства <code>flex-direction</code> размести окружности по своим местам так, чтобы каждая окружность была на окружности своего цвета</p>',
+        styles: 'flex-direction: column-reverse;',
+        board: 'gyr',
+        before: '#pond { <br> display: flex',
+        after: '}'
+    },
+    {
         instruction: '<p>Используя <code>flex-direction</code> размести окружности по своим местам так, чтобы каждая окружность была на своем окр своего цвета</p>',
         styles: 'flex-direction: column',
         board: 'gyr',
@@ -70,31 +77,45 @@ var levels = [
         after: '}'
     },
     {
-        instruction: '<p>Задействуя свойства <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code> размести окружности по своим местам так, чтобы каждая окружность была на своем окр своего цвета</p>',
+        instruction: '<p>Задействуя свойства <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code> размести окружности по своим местам так, чтобы каждая окружность была на окружности своего цвета</p>',
         styles: 'flex-direction: column; align-items: center; justify-content: space-between;',
         board: 'gyr',
         before: '#pond { <br> display: flex',
         after: '}'
     },
     {
-        instruction: '<p>Задействуя свойства <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code> размести окружности по своим местам так, чтобы каждая окружность была на своем окр своего цвета</p>',
+        instruction: '<p>Задействуя свойства <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code> размести окружности по своим местам так, чтобы каждая окружность была на окружности своего цвета</p>',
         styles: 'flex-direction: row-reverse; align-items: flex-end; justify-content: center;',
         board: 'gyr',
         before: '#pond { <br> display: flex',
         after: '}'
     },
     {
-        instruction: '<p>Задействуя свойства <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>размести окружности по своим местам так, чтобы каждая окружность была на своем окр своего цвета</p>',
-        styles: 'flex-direction: column; align-items: center; justify-content: space-between;',
-        board: 'gyr',
+        instruction: '<p>О нет! Окружности сплющило на одном ряду. Раздвинь их с помощью свойства <code class="help">flex-wrap</code>, которое принимает следующие значения:</p><ul><li><code>nowrap</code>: Размеры элементов устанавливаются автоматически, чтоб они поместились в один ряд.</li><li><code>wrap</code>: Элементы автоматически переносятся на новую строку.</li><li><code>wrap-reverse</code>: Элементы автоматически переносятся на новую строку, но строки расположены в обратном порядке.</li></ul>',
+        styles: 'flex-wrap: wrap;',
+        board: 'gggrygyrgg',
         before: '#pond { <br> display: flex',
         after: '}'
     },
     {
-        instruction: '<p>Иногда изменения порядка отображения элементов в контейнере недостаточно. В таких случаях мы можем применить свойство <code class="help">order</code> для конкретных элементов. По умолчанию, значение этого свойства у элементов равно 0, но мы можем задать положительное или отрицательное целое число этому свойству.</p> <p>Используй <code class="help">order</code></p>',
-        styles: 'flex-direction: column; align-items: center; justify-content: space-between;',
-        board: 'gyr',
+        instruction: '<p>Помоги этим окружностям выстроиться в три колонки с помощью комбинации <code class="help">flex-direction</code> и <code class="help">flex-wrap</code>.</p>',
+        styles: 'flex-wrap: wrap; flex-direction: column;',
+        board: 'ggggggrrrrrryyyyyy',
         before: '#pond { <br> display: flex',
+        after: '}'
+    },
+    {
+        instruction: '<p>Два свойства <code class="help">flex-direction</code> и <code class="help">flex-wrap</code> используются так часто вместе, что было создано свойство <code class="help">flex-flow</code> для их комбинирования. Это свойство принимает значения двух этих свойств, разделеные пробелом.</p><p>Например, ты можешь использовать <code>flex-flow: row wrap</code>, чтоб элементы располагались в ряд и автоматически переносились на новую строку.</p><p>Попробуй использовать <code class="help">flex-flow</code>, чтоб повторить предыдущий уровень.</p>',
+        styles: 'flex-flow: wrap column;',
+        board: 'ggggggrrrrrryyyyyy',
+        before: '#pond { <br> display: flex',
+        after: '}'
+    },
+    {
+        instruction: '<p>Лягушат раскидало по всему пруду, но лилии сгруппированы в верхней части. Ты можешь использовать <code class="help">align-content</code>, чтобы указать, как несколько рядов должны отделяться друг от друга. Данное свойство принимает следующие значения:</p><ul><li><code>flex-start</code>: Ряды группируются в верхней части контейнера.</li><li><code>flex-end</code>: Ряды группируются в нижней части контейнера.</li><li><code>center</code>: Ряды группируются вертикально по центру контейнера.</li><li><code>space-between</code>: Ряды отображаются с одинаковыми расстояниями между ними.</li><li><code>space-around</code>: Ряды отображаются с одинаковыми расстояниями вокруг них.</li><li><code>stretch</code>: Ряды растягиваются, чтоб заполнить контейнер равномерно.</li></ul><p>Это может запутать, но <code class="help">align-content</code> отвечает за расстояние между рядами, в то время как <code class="help">align-items</code> отвечает за то, как элементы в целом будут выровнены в контейнере. Когда только один ряд, <code class="help">align-content</code> ни на что не влияет.</p>',
+        styles: 'align-content: flex-start; flex-wrap: wrap;',
+        board: 'ggggggrrrrrryyyyyy',
+        before: '#pond { <br> display: flex<br>flex-wrap: wrap;',
         after: '}'
     }
 ];
