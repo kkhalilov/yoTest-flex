@@ -1,12 +1,12 @@
 function game() {
     const isStorage = 'undefined' !== typeof localStorage;
     var correct = false;
-    var lvl=15;
-       /*if(localStorage.getItem('level') === null ) {
+    var lvl=0;
+    if(localStorage.getItem('level') === null ) {
             lvl = 0;
         } else {
             lvl = parseInt(localStorage.getItem('level'));
-        }*/
+        }
     console.log(localStorage.getItem('level'));
     addInstructions();
     addFrogsAndLilypads();
@@ -18,7 +18,7 @@ function game() {
         $('#restart').removeClass('disabled');
     }
     var currentLevel =  lvl + 1;
-    $('.level').text('Уровень '+ currentLevel + ' из 24');
+    $('.level').text('Уровень '+ currentLevel + ' из 20');
     $('#next').addClass('disabled');
     $('#code').on('keyup', function (e) {
         var k = e.keyCode || e.which;
@@ -113,9 +113,13 @@ function game() {
         }
         /*добавил 25.06 для того, чтобы был flex-wrap на 17-ом уровне*/
         if(lvl === 16) {
-            $("#pond").addClass('flex');
+            $('#pond').addClass('flex');
+        } else if(lvl === 17) {
+            $('#pond').addClass('flex');
+        } else if(lvl === 18) {
+            $('#pond').addClass('flex');
         } else {
-            $("#pond").removeClass('flex');
+            $('#pond').removeClass('flex');
         }
     }
     $('#next').on('click', function () {
